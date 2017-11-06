@@ -1,11 +1,4 @@
-<?php
-    
-    session_start();
-    if (!isset($_SESSION['fisrtname']) AND !isset($_SESSION['emailaddress'])) {
-      header('Location: index.php');
-    }
-    //include 'php/publish.php';
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
