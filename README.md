@@ -1,2 +1,2 @@
 # mailing_list_code
-sende miltiple mail at the same time using php mailer
+send multiple mails at the same time using php mailer
