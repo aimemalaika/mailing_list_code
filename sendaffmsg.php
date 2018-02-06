@@ -1,5 +1,6 @@
 <?php
-    
+        include 'config.php'; // conection to database
+        $choosen = $con->query("SELECT * FRO suscribers"); //fetching emails in your suscribers table
     ob_start();
    
             $subject = $_POST['sujet'];
@@ -20,7 +21,7 @@
             $mail->Password = 'Peaceall236@';                           // SMTP password
             $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 587;                                    // TCP port to connect to
-             while ($ls = $choosen->fetch()) {
+             while ($ls = $choosen->fetch()) { // loop to select emails in your suscribers table
             $mail->setFrom($from_email, $from_user);
             $mail->addAddress($ls['emails'], "");     // Add a recipient
 
