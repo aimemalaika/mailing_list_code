@@ -17,8 +17,8 @@
             $mail->isSMTP();                                      // Set mailer to use SMTP
             $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
-            $mail->Username = 'server.email.forwarder@gmail.com';                 // SMTP username
-            $mail->Password = 'Peaceall236@';                           // SMTP password
+            $mail->Username = 'acontrol08@gmail.com';                 // SMTP username
+            $mail->Password = 'aime1995@';                           // SMTP password
             $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 587;                                    // TCP port to connect to
              while ($ls = $choosen->fetch()) { // loop to select emails in your suscribers table
@@ -46,6 +46,8 @@
                 if(!$mail->send()) {
                     header('Location: ../sendmessage.php');
                 } else {
+                    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                    die();
                     session_start();
                     header('Location: ../conf.html');
                 }
